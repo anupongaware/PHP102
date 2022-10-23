@@ -1,0 +1,86 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  background-color: rgb(30, 30, 30);
+  padding: 0;
+  margin: 0;
+}
+
+.header h1 {
+  font-size: 76px;
+  margin-top: 100px;
+  text-align: center;
+  background-image: linear-gradient(
+    to right,
+    rgb(67, 124, 205),
+    rgb(69, 214, 202)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.input-sum td input {
+  text-align: right;
+}
+
+.section {
+  display: flex;
+  padding: 16px;
+}
+
+.container {
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container form {
+  border-radius: 6px;
+  padding: 24px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+
+form tr {
+  padding-bottom: 12px;
+}
+
+.input-sum input[type="text"] {
+  /* background-color: #fff !important; */
+  border: 0;
+  width: 240px;
+  height: 32px;
+  color: #fff !important;
+  font-size: 20px;
+}
+
+tr td input[type="submit"],
+tr td a input[type="button"] {
+  padding: 14px 20px;
+}
+
+tr td input {
+  background-color: rgba(255, 255, 255, 0);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
+}
+
+tr td input:hover {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+tr td input:active {
+  border: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+}
