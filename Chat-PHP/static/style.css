@@ -1,0 +1,27 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 24px;
+}
+
+#content {
+  border: 1px solid rgba(50, 50, 50, 1);
+  width: 100%;
+  padding: 24px 20px;
+  height: 480px;
+  margin: 24px 0;
+  overflow-y: scroll;
+}
