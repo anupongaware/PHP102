@@ -3,6 +3,8 @@ require("../includes/UserController.php");
 
 $users = new UserController();
 
+var_dump($_POST["text_to_seach"]);
+
 ?>
 
 <!DOCTYPE html>
@@ -16,24 +18,8 @@ $users = new UserController();
 </head>
 
 <body>
-    <?php
-    if (isset($_GET['page'])) {
-        $_SESSION["page"] = $_GET['page'];
-    }
-    ?>
-
     <div class="container">
         <h1>All Customers</h1>
-        <form action="../pages/show_all_customer.php" method="post">
-            <label for="">Search :</label>
-            <input type="text" name="text_to_search" value="">
-            <input type="submit" value="SEARCH" name="btn">
-        </form>
-
-        <?php
-        $text_to_seach = isset($_POST["text_to_search"]) ? trim($_POST["text_to_search"]) : "";
-        $customers = $text_to_seach ? $users->search($text_to_seach, $conn) : $users->index($conn);
-        ?>
         <table>
             <tr>
                 <th>ID</th>
@@ -58,15 +44,7 @@ $users = new UserController();
                 </tr>
             <?php endforeach; ?>
         </table>
-        <?php if ($text_to_seach)
-            echo
-            '<p>
-                <a href="../pages/show_all_customer.php">Back to All Customes page</a>
-            </p>'
-        ?>
-        <p>
-            <a href="../index.php">Back to homepage</a>
-        </p>
+        <a href="../index.php">Back to homepage</a>
     </div>
     <script>
         function deleteCustomerPopup(id) {
@@ -79,6 +57,7 @@ $users = new UserController();
             window.open("../pages/insert_form.php?action=edit&id=" + id);
         }
     </script>
+    </div>
 </body>
 
 </html>

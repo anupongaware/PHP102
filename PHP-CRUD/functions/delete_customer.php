@@ -5,6 +5,3 @@
 
     $id = $_GET["id"];
     deleteCustomer($id,$conn);
-      
-
-?>
