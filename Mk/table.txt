@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS `mk_order_detail`;
+CREATE TABLE `mk_order_detail` (
+  `id` int NOT NULL AUTO_INCREMENT COMMENT 'รหัสการสั่งอาหาร' PRIMARY KEY,
+  `food_id` int NOT NULL COMMENT 'รหัสอาหารที่สั่ง',
+  `order_id` int NOT NULL COMMENT 'รหัสของตารางใหญ่',
+  `qty` int NOT NULL COMMENT 'จำนวนที่สั่ง',
+  `status` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8_bin NOT NULL COMMENT 'สถานะออเดอร์',
+  `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'เวลาที่เพิ่มข้อมูล'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;
+COMMIT;

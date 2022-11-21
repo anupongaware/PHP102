@@ -1,8 +1,8 @@
-DROP TABLE IF EXISTS `products`;
-CREATE TABLE `products` (
+DROP TABLE IF EXISTS `product_cat`;
+CREATE TABLE `products_cat` (
   `id` int NOT NULL COMMENT 'รหัสสินค้า',
   `name` varchar(30) CHARACTER SET utf8mb3 COLLATE utf8_bin NOT NULL COMMENT 'ชื่อสินค้า',
-  `priceee` double NOT NULL COMMENT 'ราคา',
+  `pricxxxx` double NOT NULL COMMENT 'ราคา',
   `description` text CHARACTER SET utf8mb3 COLLATE utf8_bin NOT NULL COMMENT 'คำอธิบายสินค้า',
   `insert_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'เวลาที่เพิ่มข้อมูล' 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8_bin;

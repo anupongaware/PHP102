@@ -6,7 +6,7 @@ function createMysqlConnection()
     $servername = "localhost";
     $username = "root";
     $password = "passw0rd";
-    $dbname = "test_x";
+    $dbname = "mk";
 
     //create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
