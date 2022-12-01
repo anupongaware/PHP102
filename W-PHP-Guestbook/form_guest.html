@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guest Book | Home page</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>
+        <h2>สมุดเยี่ยม (Guestbook)</h2>
+      </div>
+      <form name="form1" action="add_guest.php" method="post">
+        <div>
+          <label for="">ชื่อ :</label>
+          <input type="text" name="guest_name" />
+        </div>
+        <div>
+          <label for="">อีเมล :</label>
+          <input type="text" name="guest_email" />
+        </div>
+        <div>
+          <label for="">คำแนะนำ :</label><br />
+          <textarea name="guest_comment" cols="30" rows="10"></textarea>
+        </div>
+        <button type="submit" name="submit">ส่งข้อมูล</button>
+        <button type="reset">ยกเลิก</button>
+        <button>
+          <a href="show_guest.php">แสดงข้อมูลทั้งหมด</a>
+        </button>
+      </form>
+    </div>
+  </body>
+</html>

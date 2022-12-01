@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart | Home page</title>
+  </head>
+  <body>
+    <h2>ยินดีต้อนรับสู่ร้าน CD Online</h2>
+
+    <form name="form1" action="addbasket.php" method="post">
+      <table border="1">
+        <tr>
+          <td>
+            <div align="center">
+              <input type="radio" name="musiccd" value="Christmas" />
+            </div>
+          </td>
+          <td>
+            <img src="./img/chritmas.jpg" width="117" height="98" />
+          </td>
+          <td>199 บาท</td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">
+              <input type="radio" name="musiccd" value="Rockconsert" />
+            </div>
+          </td>
+          <td>
+            <img src="./img/chritmas.jpg" width="117" height="98" />
+          </td>
+          <td>300บาท</td>
+        </tr>
+        <tr>
+          <td>
+            <div align="center">
+              <input type="radio" name="musiccd" value="Acoustic" />
+            </div>
+          </td>
+          <td>
+            <img src="./img/chritmas.jpg" width="117" height="98" />
+          </td>
+          <td>499 บาท</td>
+        </tr>
+      </table>
+      <p>
+        <button type="submit" name="submit">สั่งสินค้า</button>
+        <button type="reset">ยกเลิก</button>
+        <button><a href="showcart.php">ดูในตะกร้าทั้งหมด</a></button>
+      </p>
+    </form>
+  </body>
+</html>

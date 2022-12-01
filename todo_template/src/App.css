@@ -1,0 +1,54 @@
+.App {
+  width: 80%;
+  border: 1px solid #ccc;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.form-todo {
+  margin-bottom: 20px;
+}
+
+.form-todo input, .form-todo button {
+  font-size: 1.2rem;
+}
+
+.todo-container {
+  width: 80%;
+  font-size: 1.2rem;
+  margin: 0 auto 20px auto;
+}
+
+.todo-list {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.todo-list--is-complete {
+  flex-grow: 0.5;
+}
+.todo-list--text {
+  flex-grow: 5;
+  text-align: left;
+}
+.todo-list--action {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.todo-list--action button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 2px 5px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.todo-list--action button:active {
+  background-color: magenta
+}

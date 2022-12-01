@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PHP-CRUD-02</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body onload="users_read()">
+    <div class="container">
+      <div class="row">
+        <h1>Users</h1>
+      </div>
+      <button
+        type="button"
+        class="btn btn-primary"
+        onclick="window.open('create.html')"
+      >
+        Create New User
+      </button>
+      <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Avatar</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Manage</th>
+            </tr>
+          </thead>
+          <tbody id="users_table"></tbody>
+        </table>
+      </div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+
+<script>
+  function users_read() {
+    var requestOptions = {
+      method: "GET",
+      redirect: "follow",
+    };
+
+    var user_table = document.getElementById("users_table");
+    user_table.innerHTML = "Loading...";
+    fetch(
+      "http://localhost/PHP102/PHP-CRUD-02/api/users/read.php",
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => {
+        user_table.innerHTML = "";
+        var jsonObj = JSON.parse(result);
+        console.log(jsonObj);
+        for (let users of jsonObj) {
+          let row = `
+            <tr>
+              <th scope="row">${users.id}</th>
+              <td><img src='${users.avatar}' width=80px alt='${users.fname}'/></td>
+              <td>${users.fname}</td>
+              <td>${users.lname}</td>
+              <td>${users.email}</td>
+              <td>
+                <a href="edit.html?id=${users.id}">Edit</a>
+                <a href="#" onclick="user_delete(${users.id})">Delete</a>
+                </td>
+            </tr>
+            `;
+          console.log(row);
+          user_table.insertAdjacentHTML("beforeend", row);
+        }
+      })
+      .catch((error) => console.log("error", error));
+  }
+
+  function user_delete(id) {
+    var myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    var raw = JSON.stringify({
+      id: id,
+    });
+
+    var requestOptions = {
+      method: "DELETE",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
+
+    fetch(
+      "http://localhost/PHP102/PHP-CRUD-02/api/users/delete.php",
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => {
+        var jsonObj = JSON.parse(result);
+        if (jsonObj.status == "Deleted successfully") {
+          alert(jsonObj.status);
+          window.open("index.html");
+        } else {
+          alert("error");
+        }
+      })
+      .catch((error) => console.log("error", error));
+  }
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>แบบฟอร์มสมัครสมาชิก</title>
+  </head>
+  <body>
+    <strong><u>แบบฟอร์มสมัครสมาชิก</u></strong>
+    <form action="memberdata.php" method="post">
+      <div>
+        <label for="firstname">ชื่อ :</label>
+        <input type="text" name="firstname" id="firstname" />
+        <label for="lastname">นามสกุล :</label>
+        <input type="text" name="lastname" id="lastname" />
+      </div>
+      <div>
+        <label for="">เพศ :</label>
+        <input type="radio" name="sex" value="1" /> <span>ชาย</span>
+        <input type="radio" name="sex" value="0" /> <span>หญิง</span>
+      </div>
+      <div>
+        <span>ระดับการศึกษา :</span>
+        <select name="education">
+          <option value="1">ต่ำกว่าปริญญาตรี</option>
+          <option value="2">ปริญญาตรี</option>
+          <option value="3">ปริญญาโท</option>
+          <option value="4">ปริญญาเอก</option>
+        </select>
+      </div>
+      <div>
+        <span>ทราบเว็บไซต์นี้จาก :</span>
+        <input type="checkbox" name="source_friend" value="1" />
+        <span>เพื่อน</span>
+        <input type="checkbox" name="source_google" value="2" />
+        <span>Google</span>
+        <input type="checkbox" name="source_tv" value="3" />
+        <span>TV</span>
+      </div>
+      <div>
+        <p>คำแนะนำ :</p>
+        <textarea name="comment" type="text"></textarea>
+      </div>
+      <div>
+        <button type="submit">ตกลง</button>
+        <button type="reset">ยกเลิก</button>
+      </div>
+    </form>
+  </body>
+</html>
